@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Note xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Title>Hello</Title>
+  <Text>Hello</Text>
+  <CreationDate>2024-02-11T14:12:18.7503749+01:00</CreationDate>
+  <Tags>
+    <string>hello, hello, hello</string>
+  </Tags>
+</Note>

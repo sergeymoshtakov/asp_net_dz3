@@ -1,0 +1,52 @@
+﻿@{
+    ViewData["Title"] = "Create Controller";
+}
+
+@model dz3.Models.Note
+
+<h1>This is Test Controller</h1>
+<br />
+<p>Title: @Model.Title</p>
+<p>Text: @Model.Text</p>
+<p>Creation date: @Model.CreationDate</p>
+<p>Tags: @string.Join(", ", Model.Tags)</p>
+
+
+<form method="post" asp-action="Show" asp-controller="Home">
+    <label for="Title">Title</label>
+    <input type="text" name="note.Title" />
+    <br />
+    <label for="Text">Text</label>
+    <input type="text" name="note.Text" />
+    <br />
+    <label for="Tags">Tags (separated by comma)</label>
+    <input type="text" name="note.Tags" />
+    <br />
+    <button type="submit">Send</button>
+</form>
+
+@if (ViewData["MyMessage"] != null)
+{
+    <div class="alert alert-info alert-dismissible fade show" role="alert">
+        @ViewData["MyMessage"]
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+}
+else
+{
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        No Message
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
+}
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>

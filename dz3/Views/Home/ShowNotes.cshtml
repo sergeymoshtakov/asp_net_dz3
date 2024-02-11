@@ -1,0 +1,38 @@
+﻿@model List<dz3.Models.Note>
+
+@{
+    ViewData["Title"] = "Show Notes";
+}
+
+<h1>List of Notes</h1>
+
+@if (Model != null && Model.Count > 0)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Text</th>
+                <th>Creation Date</th>
+                <th>Tags</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var note in Model)
+            {
+                <tr>
+                    <td>@note.Title</td>
+                    <td>@note.Text</td>
+                    <td>@note.CreationDate</td>
+                    <td>@string.Join(", ", note.Tags)</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No notes available.</p>
+}
+
+<a asp-action="LoadFromFile" class="btn btn-primary">Load Notes From File</a>
